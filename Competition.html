@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Competition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+
+  <style>
+    /* Page Specific Overrides */
+    .page { 
+      padding: 4rem 2rem; 
+      max-width: 900px; 
+      margin: auto; 
+    }
+    
+    h2 { 
+      font-family: 'Orbitron', sans-serif; /* Highlight Font */
+      color: #d4af37; 
+      border-bottom: 2px solid #d4af37; 
+      padding-bottom: 0.5rem; 
+      margin-top: 2rem;
+      text-transform: uppercase;
+    }
+
+    .faction-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+    .faction-list li { 
+      font-family: 'Poppins', sans-serif;
+      background: rgba(212, 175, 55, 0.05); 
+      margin: 0.8rem 0; 
+      padding: 1.2rem; 
+      border-left: 4px solid #d4af37; 
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .faction-list li:hover {
+      background: rgba(212, 175, 55, 0.15);
+      transform: translateX(10px);
+    }
+    
+    p { font-family: 'Poppins', sans-serif; margin-bottom: 1.5rem; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+    </a>
+    
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="Competition.html" class="active">Competition</a></li>
+      <li><a href="Workshop.html">Workshop</a></li>
+      <li><a href="subcompetition.html">Sub-competitions</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page">
+  <h2>Preliminary Round</h2>
+  <p>Prior to the main event of Star Party '26, a preliminary round will be held for the competitors taking part in the observational competition for the selection of the top 20 scoring teams.</p>
+
+  <h2>Final Round</h2>
+  <p>The Sky Observatory Competition will be held under 6 factions:</p>
+  
+  <ul class="faction-list">
+    <li>1) Best Moon Mapping</li>
+    <li>2) Best Planetary Observation</li>
+    <li>3) Best Deep Sky Observation</li>
+    <li>4) Best Constellation Mapping</li>
+    <li>5) Theory Paper</li>
+    <li>6) Spot Test and Viva Test</li>
+  </ul>
+
+  <p>The team accumulating the highest number of scores will be crowned as the <span class="highlight">Champions of Star Party 2026</span>.</p>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+
+<script>
+  // Script to handle mobile menu toggle
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

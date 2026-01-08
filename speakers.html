@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Sub-competitions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <h2>Online Sub-competitions</h2>
+  <p>Parallel to the main event, a recently introduced series of online sub-competitions is held to showcase the diverse talents of our astronomical community. These events allow participants to express their creativity and analytical skills from anywhere in the island.</p>
+
+  <div class="card">
+    <h3>The Categories</h3>
+    <p>The sub-competitions mainly consist of:</p>
+    <ul style="list-style: none; padding-left: 0; margin-top: 1.5rem;">
+      <li style="margin-bottom: 1rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong>Science Fiction Writing:</strong> Crafting stories that blend scientific theory with imaginative futures.
+      </li>
+      <li style="margin-bottom: 1rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong>Manual Arts:</strong> Physical artwork, sketches, and models inspired by the cosmos.
+      </li>
+      <li style="margin-bottom: 1rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong>Digital Arts:</strong> Digital paintings, 3D renders, and graphic designs of celestial themes.
+      </li>
+      <li style="margin-bottom: 1rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong>Decoding Competition:</strong> A test of logic and cryptographical skill to uncover hidden astronomical messages.
+      </li>
+    </ul>
+  </div>
+
+  <div class="card" style="border: 2px solid #D4AF37; background: rgba(212, 175, 55, 0.05);">
+    <h3>Recognition & Awards</h3>
+    <p>The top three competitors of each category will be rewarded with a <strong>valuable certificate</strong> at the main Star Party event held at the University of Peradeniya.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

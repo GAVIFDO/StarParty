@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Workshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <h2>The Astronomical Workshop</h2>
+  <p>The Star Party '26 Astronomical workshop will be held with the prospect of introducing astronomy to the newcomers from schools, islandwide. This session serves as a gateway for young minds to explore the mysteries of the cosmos.</p>
+
+  <div class="card">
+    <h3>Discussion Focus</h3>
+    <p>This workshop will mainly focus on discussions under:</p>
+    <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong style="color: #D4AF37;"> General Astronomy</strong>
+      </li>
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong style="color: #D4AF37;"> Observational Astronomy</strong>
+      </li>
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">
+        <strong style="color: #D4AF37;"> Rocketry</strong>
+      </li>
+    </ul>
+  </div>
+
+  
+
+  <div class="card">
+    <h3>Conducted By</h3>
+    <p>The workshop will be conducted by the <strong>Old Anandians' Astronomical Association</strong>, <strong>Old Mayans Astronomical Association</strong>, and the <strong>Star Party Crew</strong>.</p>
+    <p style="margin-top: 1rem; color: #F5DEB3; font-style: italic;">Valuable tutor guides and handbooks will be distributed to all the participants on this venture.</p>
+  </div>
+
+  <div class="card" style="border: 2px solid #D4AF37; background: rgba(212, 175, 55, 0.1);">
+    <h3>Award: "Uprising Team of Star Party 2026"</h3>
+    <p>At the conclusion of the workshop, participants will be tested with a <strong>theory paper</strong> and a <strong>practical test</strong>. The team which scores the highest will be awarded the prestigious title of the <strong>Uprising Team of Star Party 2026</strong>.</p>
+  </div>
+
+  <div style="margin-top: 4rem; text-align: center; padding: 2rem; border: 1px dashed #D4AF37;">
+    <h3 style="color: #fff; letter-spacing: 2px; margin: 0;">
+      REGISTRATIONS WILL BE OPEN FROM <span style="color: #D4AF37; font-size: 1.5rem; text-shadow: 0 0 10px #D4AF37;">26TH OF JANUARY</span>
+    </h3>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <style>
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .contact-method {
+      text-align: center;
+      padding: 2.5rem;
+      background: rgba(30, 58, 138, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .contact-method:hover {
+      border-color: #D4AF37;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+      transform: translateY(-5px);
+    }
+    .contact-method i {
+      font-size: 2.5rem;
+      color: #D4AF37;
+      margin-bottom: 1.5rem;
+    }
+    .contact-method h3 {
+      margin-bottom: 1rem;
+      font-family: 'Lora', serif;
+      color: #D4AF37;
+    }
+    .contact-method p {
+      color: #F5DEB3;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .social-links {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .social-icons a {
+      font-size: 2rem;
+      color: #D4AF37;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #D4AF37;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <div style="text-align: center;">
+    <h2>Get in Touch</h2>
+    <p>If you have any questions regarding the event, our team is ready to assist you.</p>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-method">
+      <i class="fa-solid fa-envelope"></i>
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:astroananda@gmail.com">
+          AAA
+        </a>
+      </p>
+      <p>
+        <a href="mailto:astromgck@gmail.com" >
+          ASMGCK
+        </a>
+      </p>
+      
+    </div>
+
+    <div class="contact-method">
+      <i class="fa-solid fa-phone-volume"></i>
+      <h3>Call</h3>
+      <p align="left">+94 71 713 2233 - Lakiru Wanasingha<br>+94 71 652 1219 - Ruvindi Wekadapola<br> +94 76 398 1897 - Mihini Ranaweera<br>+94 71 320 9157 - Rushanka Weerathunga</p>
+    </div>
+
+   
+      
+    </div>
+  </div>
+
+  
+    
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

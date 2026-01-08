@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Sub-competitions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <h2>Online Sub-Competitions</h2>
+  <p>Parallel to the main event, a recently introduced series of online sub-competitions allows participants to showcase diverse talents. These competitions are innovative initiatives for South Asia, a trend we are proud to have pioneered since 2014.</p>
+
+  <div class="card">
+    <h3>Competition Categories</h3>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">Science Fiction Writing</li>
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">Manual Arts</li>
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">Digital Arts</li>
+      <li style="margin-bottom: 0.8rem; border-left: 3px solid #D4AF37; padding-left: 1rem;">Decoding Competition</li>
+    </ul>
+    <p style="margin-top: 1.5rem; font-style: italic;">The top three competitors of each category will be rewarded with a valuable certificate at the main Star Party event held at the University of Peradeniya.</p>
+  </div>
+
+  <h2>Astrophotography Competition</h2>
+  <p>Envisaged in 2014 to launch concurrently with Star Party, this competition has set a benchmark for astronomical quiz and photography events sub-continent wide. The competition is conducted in two distinct stages:</p>
+
+  
+
+  <div class="card">
+    <h3>Stage 01: Preliminary Round</h3>
+    <p>Competitors must submit astronomy-related photographs based on the official event theme. These submissions will be evaluated by a panel of professionals.</p>
+  </div>
+
+  <div class="card">
+    <h3>Stage 02: Final Round</h3>
+    <p>Successful competitors from the preliminary round will advance to an <strong>on-site competition</strong> held at the University of Peradeniya.</p>
+  </div>
+
+  <div class="card" style="border: 2px solid #D4AF37; background: rgba(212, 175, 55, 0.05);">
+    <h3>People's Choice Award</h3>
+    <p>The top 5 photographs from each category in the preliminary round will enter a voting procedure across all Star Party social media platforms. The photograph with the most votes will be crowned the <strong>Most Popular Astro Photograph</strong> of its category.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

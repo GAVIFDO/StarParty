@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+   /* Gallery Grid Layout */
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .preview-item {
+      border: 1px solid #D4AF37;
+      padding: 5px;
+      background: rgba(5, 10, 24, 0.5);
+      transition: transform 0.3s;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    /* Hover Effect */
+    .preview-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* LIGHTBOX EFFECT (The Pop-up) */
+    .lightbox {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(5, 10, 24, 0.95);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .lightbox-content {
+      max-width: 85%;
+      max-height: 80%;
+      border: 2px solid #D4AF37;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #D4AF37;
+      font-size: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #caption {
+      margin-top: 15px;
+      font-family: 'Lora', serif;
+      color: #D4AF37;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+<a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h2 class="highlight">Event Gallery</h2>
+    <p>A glimpse into the celestial wonders and memories of Star Party.</p>
+  </div>
+
+  <div class="gallery-preview">
+    <div class="preview-item"><img src="images/gallery-preview1.jpg" alt="Night sky over the desert"></div>
+    <div class="preview-item"><img src="images/gallery-preview2.jpg" alt="Astro-photography of the Milky Way"></div>
+    <div class="preview-item"><img src="images/gallery-preview3.jpg" alt="Pyramids under the stars"></div>
+    
+    <div class="preview-item"><img src="images/gallery-preview4.jpg" alt="Stellar Observation"></div>
+    <div class="preview-item"><img src="images/gallery-preview6.jpg" alt="Telescope Alignment"></div>
+    <div class="preview-item"><img src="images/gallery-preview5.jpg" alt="Nebula Capture"></div>
+    
+    <div class="preview-item"><img src="images/gallery-preview7.jpg" alt="Deep Space Photography"></div>
+    <div class="preview-item"><img src="images/gallery-preview8.jpg" alt="Team Workshop"></div>
+    <div class="preview-item"><img src="images/gallery-preview9.jpg" alt="Star Party Memories"></div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+  </div>
+
+  <div class="card drive-card" style="margin-top: 3rem; text-align: center; border: 2px solid #D4AF37;">
+    <i class="fa-brands fa-google-drive"></i>
+    <h3 class="highlight">View Full Collection</h3>
+    <p>Access the complete high-resolution archive of Star Party '26 photos.</p>
+    <br>
+    <a href="https://drive.google.com/drive/folders/108Cm7LHe89m48z_c82mvuwQop-1vcSQ2?pli=1" 
+       target="_blank" 
+       class="btn">
+       Open Google Drive Folder
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const captionText = document.getElementById("caption");
+  const images = document.querySelectorAll(".clickable-img");
+
+  images.forEach(img => {
+    img.onclick = function() {
+      lightbox.style.display = "flex";
+      lightboxImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+  });
+
+  document.querySelector(".close-lightbox").onclick = function() {
+    lightbox.style.display = "none";
+  }
+
+  // Close when clicking outside the image
+  lightbox.onclick = function(e) {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <title>Starparty'26 | About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/png" href="images/starparty.png">
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <h2>About Starparty</h2>
+  <p>Welcome to the 19th edition of Star Party, Sri Lanka, the pinnacle of astronomical excellence where juvenile intellects reach for stellar.
+<br><br>
+Since 2004, we've been on a grand journey, leading the way to students through the mysteries of the cosmos, spotlighting us as the largest-running inter-school astronomical observation competition in Sri Lanka. Under the starlit sky of the University of Peradeniye, teams complete in Moon Observation, Planetary Studies, Deep Sky Exploration and Celestial Measurements. Apart from that, we conduct a Night Sky Observation Competition, Astronomical Workshop, Astrophotography Competition, Sci-fi Writing Competition and Digital and Manual Arts Competition.
+<br><br>
+Join us in our quest as we live by our motto; "Ad Astra Per Aspera" - Through the hardships, to the stars.</p>
+<footer><br>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

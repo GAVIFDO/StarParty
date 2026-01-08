@@ -1,0 +1,325 @@
+/* ========== Egyptian Theme Palette ========== 
+   Gold: #D4AF37 | Deep Space: #050A18 | Lapis: #1E3A8A | Parchment: #F5DEB3
+============================================ */
+
+/* 1. Basic Reset & Global Responsive Rules */
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Roboto', Arial, sans-serif; 
+  color: #F5DEB3; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(rgba(5, 10, 24, 0.85), rgba(5, 10, 24, 0.85)),
+              url('../images/egyptian night sky.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 2. Loading Screen Styling */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #050A18;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid rgba(212, 175, 55, 0.1);
+  border-top: 8px solid #D4AF37;
+  border-radius: 50%;
+  width: 60px; height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 3. Navigation (Image Logo & No Home Tab) */
+.navbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0.5rem 2rem; 
+  background: rgba(5, 10, 24, 0.95);
+  border-bottom: 2px solid #D4AF37; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px; height: 3px; background-color: #D4AF37;
+  margin: 3px 0; transition: 0.4s;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #D4AF37;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #D4AF37;
+}
+
+/* 4. Hero Section (INDEX HOME CORRECTION) */
+.hero {
+  min-height: 85vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero-content {
+  text-align: center; 
+  background: rgba(30, 58, 138, 0.2); 
+  padding: 3rem; 
+  border-radius: 15px;
+  border: 1px solid #D4AF37;
+  backdrop-filter: blur(8px);
+  width: 95%;
+  max-width: 850px;
+}
+
+/* Large logo replacing big Starparty text */
+.hero-logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+/* 6. Typography & Page Layouts */
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #D4AF37;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  display: inline-block;
+}
+
+.page {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(30, 58, 138, 0.15);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: #D4AF37;
+  transform: translateY(-5px);
+}
+
+/* 7. Registration Form */
+.register-form {
+  background-color: rgba(5, 10, 24, 0.95);
+  padding: 2.5rem;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 3rem auto;
+  border: 1px solid #D4AF37;
+}
+
+.register-form input, .register-form select, .register-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  background: #050A18;
+  border: 1px solid #1E3A8A;
+  color: #F5DEB3;
+  border-radius: 5px;
+}
+
+.register-form input:focus {
+  border-color: #D4AF37;
+  outline: none;
+}
+
+.hero-subtext {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0.2rem; /* Reduced to pull status text closer */
+  color: #F5DEB3;
+  font-weight: 300;
+}
+
+.status-text {
+  /* Using 'Lora' as the clean, distinct font */
+  font-family: 'Lora', serif; 
+  font-size: 0.8rem;
+  color: #c2d8ff; /* Soft red for 'Closed' status */
+  letter-spacing: 1px;
+  margin-bottom: -1.5rem; /* Negative margin pulls the countdown up close */
+  opacity: 0.9;
+  display: block;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 2rem; /* Adjusted to balance the negative margin above */
+  margin-bottom: 2rem;
+}
+
+
+
+.countdown div {
+  background: rgba(212, 175, 55, 0.15); /* Slightly darker background to support larger text */
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #D4AF37;
+  min-width: 140px; /* Increased width to accommodate larger numbers */
+  text-align: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.countdown span {
+  display: block;
+  /* Font size increased: 
+     Min: 2.5rem | Preferred: 6vw | Max: 4rem */
+  font-size: clamp(2.5rem, 6vw, 4rem); 
+  font-weight: 900; /* Extra bold */
+  color: #D4AF37;
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.countdown div {
+  /* This targets the text "Days", "Hours", etc. below the numbers */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #F5DEB3;
+}
+
+/* 9. Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: #D4AF37;
+  color: #050A18 !important;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background: #fdd757;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* 10. Footer */
+footer {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #050A18;
+  border-top: 2px solid #D4AF37;
+}
+
+/* 11. Media Queries (Mobile Responsiveness) */
+@media (max-width: 768px) {
+  .navbar { padding: 0.5rem 1rem; }
+  .menu-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 65px; left: 0;
+    background: rgba(5, 10, 24, 0.98);
+    flex-direction: column;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 2px solid #D4AF37;
+  }
+
+  .nav-links.active { display: flex; }
+  .nav-links li { margin: 1.2rem 0; margin-left: 0; }
+
+  .hero-logo { max-width: 280px; }
+  .hero-content { padding: 2rem 1rem; }
+  
+  .countdown div {
+    min-width: 80px;
+    padding: 0.8rem;
+    flex: 1 1 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo { max-width: 220px; }
+  .page { padding: 3rem 1rem; }
+  .btn { width: 100%; text-align: center; }
+}

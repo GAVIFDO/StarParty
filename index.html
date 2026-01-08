@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap'" rel="stylesheet"><link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <title>Starparty’26 | Under the Skies of the Pharaohs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+
+  <!-- Google Fonts (optional for style) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <style>
+    /* ========== Loading Screen ========== */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #0b0c10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 8px solid #1f2833;
+      border-top: 8px solid #D4AF37;
+      border-radius: 50%;
+      width: 80px; height: 80px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    /* ========== Hero Section ========== */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('images/egyptian night sky.jpg') center/cover no-repeat;
+    }
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-content h2 { font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 1rem;}
+    .hero-content p { font-size: 1.2rem; margin-bottom: 2rem;}
+    .btn {
+      background-color: #D4AF37;
+      color: #0b0c10;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin:0 0.5rem;
+    }
+    .btn:hover {
+      background-color: #fff06a;
+      box-shadow: 0 0 15px #D4AF37;
+      transform: scale(1.05);
+    }
+
+    /* ========== Countdown Timer ========== */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2rem;
+      margin: 2rem 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+ .slider {
+      position: relative;
+      max-width: 900px;
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 15px;
+      background: rgba(31,40,51,0.8);
+      padding: 2rem;
+      border: 1px solid #a29445;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      text-align: center;
+    }
+    .slider-controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .slider-controls button {
+      background: #9ca245;
+      color:#0b0c10;
+      border:none;
+      padding:0.5rem 1rem;
+      margin:0 0.3rem;
+      border-radius:5px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .slider-controls button:hover { background:#D4AF37; }
+
+   /* ========== Rules Section ========== */
+    .rules {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: rgba(31,40,51,0.8);
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #a29445;
+    }
+    .rules h2 { 
+      margin-bottom: 1.5rem; 
+      font-family: 'Orbitron', sans-serif;
+      color: #fced66;
+    }
+    .rules p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+    .btn-rules {
+      background-color: transparent;
+      color: #D4AF37;
+      padding: 0.8rem 2.5rem;
+      border: 2px solid #D4AF37;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .btn-rules:hover {
+      background-color: #D4AF37;
+      color: #f8e6ab;
+      box-shadow: 0 0 20px rgba(252, 237, 102, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="Competition.html">Competition</a></li>
+    <li><a href="Workshop.html">Workshop</a></li>
+    <li><a href="subcompetition.html">Sub-competitions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="images/logo.png" alt="Starparty'26" class="hero-logo">
+    
+    <p class="hero-subtext">Under the Skies of the Pharaohs</p>
+    
+    <p class="status-text">Registrations Closed In</p>
+    
+    <div id="countdown" class="countdown">
+      <div><span id="days">00</span>Days</div>
+      <div><span id="hours">00</span>Hours</div>
+      <div><span id="minutes">00</span>Min</div>
+      <div><span id="seconds">00</span>Sec</div>
+    </div>
+    
+    <a href="register.html" class="btn disabled">Register Now</a>
+  </div>
+</section>
+
+<section class="slider">
+  <div class="slides">
+    <div class="slide">
+      <h3>Anandian Astronomical Association</h3>
+      <p>Decorative divider<br>
+Founded in 1998, the Anandian Astronomical Association has been a pioneer in inspiring young minds to explore the universe. For over two decades, it has promoted astronomy among students at Ananda College and across Sri Lanka through initiatives that blend education with celestial wonder.</p>
+    </div>
+    <div class="slide">
+      <h3>Mahamaya Girls' College Astronomical Society</h3>
+      <p>The Astronomical Society of Mahamaya Girls' College, Kandy marks a rich legacy that began in 1996, celebrating a journey filled with excellence and triumph. Over the years, the society has woven an illustrious path, reaching remarkable milestones and fostering a spirit of exploration and dedication in the field of astronomy..</p>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</section>
+
+<!-- RULES & REGULATIONS -->
+<section class="rules">
+  <h2>Rules & Regulations</h2>
+  <p>To ensure a fair and organized event, all participating teams must adhere to the official Starparty’26 guidelines. Please review the documentation carefully before the competition begins.</p>
+  <a href="https://drive.google.com/drive/folders/1kq4200BhNiU8bGtwEO49JkqaEmeouDzo?usp=drive_link" target="_blank" class="btn-rules">
+    View Official Rules & Regulations
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="text-align:center; padding:1rem;">© Starparty’26 — Ad Astra per Aspera</p>
+</footer>
+
+<script>
+  // ========== Loading Screen ==========
+  window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+  });
+
+  // ========== Countdown Timer ==========
+  const eventDate = new Date("2026-01-15T09:00:00").getTime(); // Change to your event date
+
+  const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance % (1000*60))/1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    if(distance < 0){
+      clearInterval(countdownFunction);
+      document.getElementById("countdown").innerHTML = "The event has started!";
+    }
+  }, 1000);
+
+  // ========== Slider ==========
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index){
+    const slidesContainer = document.querySelector('.slides');
+    if(index < 0) currentSlide = slides.length - 1;
+    else if(index >= slides.length) currentSlide = 0;
+    else currentSlide = index;
+    slidesContainer.style.transform = `translateX(-${currentSlide*100}%)`;
+  }
+
+  function nextSlide(){ showSlide(currentSlide+1); }
+  function prevSlide(){ showSlide(currentSlide-1); }
+
+  // Auto-slide every 5 seconds
+  setInterval(nextSlide, 5000);
+
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+</script>
+
+</body>
+</html>
