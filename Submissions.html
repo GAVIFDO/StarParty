@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Submissions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Styling specifically for the form elements to match the Egyptian theme */
+    .submission-container {
+      background: rgba(30, 58, 138, 0.15);
+      padding: 2.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(8px);
+    }
+    
+    .category-section {
+      display: none;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .submission-form label {
+      display: block;
+      margin-top: 1.2rem;
+      color: #D4AF37;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+    
+    /* Ensure inputs match the register-form style from styles.css */
+    input, select, textarea {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.8rem 0;
+      background: #050A18;
+      border: 1px solid #1E3A8A;
+      color: #F5DEB3;
+      border-radius: 5px;
+    }
+    
+    input:focus {
+      border-color: #D4AF37;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+    </a>
+    
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="Competition.html">Competition</a></li>
+      <li><a href="Workshop.html">Workshop</a></li>
+      <li><a href="subcompetition.html" class="active">Sub-competitions</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page">
+  <div style="text-align: center;">
+    <h2>Sub-Competition Submissions</h2>
+    <p style="margin-bottom: 2rem;">Upload your work for Starparty’26 sub-competitions</p>
+  </div>
+
+  <div class="submission-container">
+    <form class="submission-form" onsubmit="submitForm(event)">
+      <label>Member Name</label>
+      <input type="text" name="memberName" id="memberName" required>
+
+      <label>School Name</label>
+      <input type="text" name="schoolName" id="schoolName" required>
+
+      <label>Contact Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label>Contact Number</label>
+      <input type="text" name="number" id="number" required>
+
+      <label>Date of Birth</label>
+      <input type="date" name="dob_submission" id="dob_submission" required>
+
+      <label>Competition Category</label>
+      <select id="categorySelect" name="category" required onchange="updateCategory()">
+        <option value="">-- Select --</option>
+        <option value="astro">Astrophotography</option>
+        <option value="scifi">Sci-Fi Writing</option>
+        <option value="digital">Digital Art</option>
+        <option value="manual">Manual Art</option>
+        <option value="decode">Decoding Challenge</option>
+      </select>
+
+      <div class="category-section" id="astro">
+        <label>Equipment Used</label>
+        <input type="text" name="equipment" id="equipment">
+        <label>Country (For International Participants)</label>
+        <input type="text" name="country" id="country">
+        <label>Submission Link (Google Drive)</label>
+        <input type="url" name="aplink" id="aplink">
+      </div>
+
+      <div class="category-section" id="scifi">
+        <label>Theme</label>
+        <input type="text" name="scifitheme" id="scifitheme">
+        <label>Submission Link (Google Drive)</label>
+        <input type="url" name="sflink" id="sflink">
+      </div>
+
+      <div class="category-section" id="digital">
+        <label>Theme</label>
+        <input type="text" name="digitaltheme" id="digitaltheme">
+        <label>Submission Link (Google Drive)</label>
+        <input type="url" name="dalink" id="dalink">
+      </div>
+
+      <div class="category-section" id="manual">
+        <label>Theme</label>
+        <input type="text" name="manualtheme" id="manualtheme">
+        <label>Submission Link (Google Drive)</label>
+        <input type="url" name="malink" id="malink">
+      </div>
+
+      <div class="category-section" id="decode">
+        <label>Answer</label>
+        <input type="text" name="decodinganswer" id="decodinganswer">
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button type="submit" class="btn">Submit Entry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© Starparty'26 | Ad Astra per Aspera</p>
+</footer>
+
+<script>
+  // Mobile Menu
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Category Toggle
+  window.updateCategory = function () {
+    const selected = document.getElementById("categorySelect").value;
+    document.querySelectorAll(".category-section").forEach(s => s.style.display = "none");
+    if (selected) document.getElementById(selected).style.display = "block";
+  };
+
+  // Form Submission
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjAXnNTkBMAm73wX5cTrX5FiKy1Zo5GOjQVZeMufaka9elkKFL8Z0swZDSXblrVzal/exec";
+
+  window.submitForm = function (event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    fetch(WEB_APP_URL, {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      window.location.href = "thankyousub.html";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Submission failed");
+    });
+  };
+</script>
+
+</body>
+</html>
