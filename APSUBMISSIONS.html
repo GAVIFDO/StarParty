@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starparty'26 | Submissions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/starparty.png">
+
+  <style>
+    body {
+      background: #0b0c10;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 700px;
+      margin: auto;
+      padding: 4rem 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #D4AF37;
+    }
+
+    p {
+      text-align: center;
+      color: #c5c6c7;
+      margin-bottom: 2rem;
+    }
+
+    .submission-form {
+      background-color: rgba(30, 58, 115, 0.15);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 196, 0, 0.2);
+    }
+
+    .submission-form label {
+      display: block;
+      margin-top: 1.2rem;
+      color: #D4AF37;
+      font-weight: bold;
+    }
+
+    .submission-form input,
+    .submission-form select,
+    .submission-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      background: #0b0c10;
+      border: 1px solid #a0a245;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-top: 0.4rem;
+    }
+
+    .submission-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .category-section {
+      display: none;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(212,175,55,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Starparty'26 Logo" class="logo-img">
+  </a>
+  
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+        <li><a href="Competition.html">Competition</a></li>
+        <li><a href="astrophotography.html">Astrophotography</a></li>
+        <li><a href="Workshop.html">Workshop</a></li>
+        <li><a href="subcompetition.html">Sub-competitions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="page">
+  <h2>Astrophotography Competition Submissions</h2>
+  <h4>Upload or submit your work for Starparty’26 Astrophotography Competition</h4>
+  <br>
+
+  <form class="submission-form" onsubmit="submitForm(event)">
+
+    <label>School Name</label>
+    <input type="text" name="schoolName" id="schoolName" required>
+<br>
+<br>
+    <h4>Member 1</h4>
+    <label>Name</label>
+    <input type="text" name="name1" id="name1" required>
+
+    <label>Date of Birth</label>
+    <input type="date" name="dob1" id="dob1" required>
+
+    <label>Contact Number</label>
+    <input type="text" name="contact1" id="contact1" required>
+
+    <label>Email</label>
+    <input type="email" name="email1" id="email1">
+<br>
+<br>
+    <h4>Member 2(optional)</h4>
+    <label>Name</label>
+    <input type="text" name="name2" id="name2">
+
+    <label>Date of Birth</label>
+    <input type="date" name="dob2" id="dob2">
+
+    <label>Contact Number</label>
+    <input type="text" name="contact2" id="contact2">
+
+    <label>Email</label>
+    <input type="email" name="email2" id="email2">
+<br>
+<br>
+    <h4>Member 3(optional)</h4>
+    <label>Name</label>
+    <input type="text" name="name3" id="name3">
+
+    <label>Date of Birth</label>
+    <input type="date" name="dob3" id="dob3">
+
+    <label>Contact Number</label>
+    <input type="text" name="contact3" id="contact3">
+
+    <label>Email</label>
+    <input type="email" name="email3" id="email3">
+
+    <label>Category</label>
+    <select id="category" name="category" required>
+        <option>Moon Mapping</option>
+        <option>Planetary Observation</option>
+        <option>Deep Sky Observation</option>
+        <option>Constellation Mapping</option>
+    </select>
+
+      <label>Equipment Used</label>
+      <input type="text" name="equipment" id="equipment" required>
+
+      <label>Submission Link (Google Drive)</label>
+    <input type="url" name="aplink" id="aplink" required>
+
+<br>
+<br>
+    <center>
+      <button type="submit" class="btn">Submit</button>
+    </center>
+
+  </form>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJC9-7ckL9ACwwfOXdRNvONw2csADuoFfpIBvckY1dMmX9fHtU5Fd0ovei0xhtpT_v/exec";
+
+
+  window.submitForm = function (event) {
+    event.preventDefault();
+
+    const form = document.querySelector(".submission-form");
+    const formData = new FormData(form);
+
+    fetch(WEB_APP_URL, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.text())
+    .then(() => {
+      window.location.href = "thankyousub.html";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Submission failed");
+    });
+  };
+
+});
+</script>
+
+
+</body>
+</html>
