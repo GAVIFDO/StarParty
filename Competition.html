@@ -14,7 +14,8 @@
     /* Page Specific Overrides */
     .page { 
       padding: 4rem 2rem; 
-      max-width: 900px; 
+      max-width: 100%; /* Expanded to fit table on PC */
+      width: 1100px;
       margin: auto; 
     }
     
@@ -43,6 +44,83 @@
     }
     
     p { font-family: 'Poppins', sans-serif; margin-bottom: 1.5rem; line-height: 1.8; }
+
+    /* =========================================
+       LEADERBOARD TABLE STYLES (Egyptian Theme)
+       ========================================= */
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin: 2rem 0;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(5, 10, 24, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .leaderboard {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Poppins', sans-serif;
+        background: rgba(5, 10, 24, 0.85); /* Deep Space Dark */
+    }
+
+    .leaderboard th, .leaderboard td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .leaderboard th {
+        background-color: rgba(30, 58, 138, 0.6); /* Lapis Blue tint */
+        color: #D4AF37; /* Gold Text */
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .leaderboard td {
+        color: #F5DEB3; /* Parchment */
+        font-size: 0.95rem;
+    }
+
+    /* Column Widths */
+    .col-rank { width: 5%; text-align: center !important; font-weight: bold; color: #D4AF37 !important; }
+    .col-school { width: 35%; }
+    .col-data { width: 15%; text-align: center !important; }
+
+    /* Top 3 Highlighting */
+    .rank-1 { background: linear-gradient(90deg, rgba(212, 175, 55, 0.25), transparent); } /* Gold */
+    .rank-2 { background: linear-gradient(90deg, rgba(192, 192, 192, 0.2), transparent); }  /* Silver */
+    .rank-3 { background: linear-gradient(90deg, rgba(205, 127, 50, 0.2), transparent); }   /* Bronze */
+
+    /* Hover Effect */
+    .leaderboard tbody tr:hover {
+        background-color: rgba(212, 175, 55, 0.1);
+    }
+
+    /* Fixed Glow Text Style from user code */
+    .glow-text {
+        color: rgb(255, 94, 94);
+        font-size: xx-large;
+        text-shadow: 0 0 10px rgba(255, 94, 94, 0.7);
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Responsive Logic for Table */
+    @media (max-width: 768px) {
+        .hide-mobile {
+            display: none;
+        }
+        .leaderboard th, .leaderboard td {
+            padding: 0.8rem 0.5rem;
+            font-size: 0.85rem;
+        }
+        .col-school {
+            max-width: 150px;
+            white-space: normal;
+        }
+    }
   </style>
 </head>
 <body>
@@ -73,10 +151,185 @@
 
 <section class="page">
   <h2>Preliminary Round</h2>
-  <h3 style="color: rgb(255, 94, 94); font-size:xx-large; glow">Practical Stage Over! Submissions Opened!</h3>
+  <h3 class="glow-text">RESULTS RELEASED!</h3>
   <p>Prior to the main event of Star Party '26, a preliminary round will be held for the competitors taking part in the observational competition for the selection of the top 20 scoring teams.</p>
-   <a href="https://drive.google.com/drive/folders/1qrpLfjSoL4zdPm-L1vDwBRDF_-BKe8k3" target="_blank" class="btn">View Manuals</a><br><br>
-   <a href="https://forms.gle/acMifePsppQZGee98" target="_blank">Click Here to Submit</a><br><br>
+   
+  <div class="table-container">
+    <table class="leaderboard">
+        <thead>
+            <tr>
+                <th class="col-rank">Rank</th>
+                <th class="col-school">School (Team)</th>
+                <th class="col-data hide-mobile">Practical</th>
+                <th class="col-data hide-mobile">Observational</th>
+                <th class="col-data">Total</th>
+                <th class="col-data hide-mobile">%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="rank-1">
+                <td class="col-rank">1</td>
+                <td>St. Sylvester's College (A)</td>
+                <td class="col-data hide-mobile">55.5</td>
+                <td class="col-data hide-mobile">87.75</td>
+                <td class="col-data">143.25</td>
+                <td class="col-data hide-mobile">71.625</td>
+            </tr>
+            <tr class="rank-2">
+                <td class="col-rank">2</td>
+                <td>Rathnavali Balika Vidyalaya - Gampaha (B)</td>
+                <td class="col-data hide-mobile">53</td>
+                <td class="col-data hide-mobile">76.25</td>
+                <td class="col-data">129.25</td>
+                <td class="col-data hide-mobile">64.625</td>
+            </tr>
+            <tr class="rank-3">
+                <td class="col-rank">3</td>
+                <td>Kingswood College Kandy (A)</td>
+                <td class="col-data hide-mobile">64.5</td>
+                <td class="col-data hide-mobile">51.75</td>
+                <td class="col-data">116.25</td>
+                <td class="col-data hide-mobile">58.125</td>
+            </tr>
+            <tr>
+                <td class="col-rank">4</td>
+                <td>Nalanda College (A)</td>
+                <td class="col-data hide-mobile">55</td>
+                <td class="col-data hide-mobile">56.75</td>
+                <td class="col-data">111.75</td>
+                <td class="col-data hide-mobile">55.875</td>
+            </tr>
+            <tr>
+                <td class="col-rank">5</td>
+                <td>Mahinda College Galle (A)</td>
+                <td class="col-data hide-mobile">60</td>
+                <td class="col-data hide-mobile">50.75</td>
+                <td class="col-data">110.75</td>
+                <td class="col-data hide-mobile">55.375</td>
+            </tr>
+            <tr>
+                <td class="col-rank">6</td>
+                <td>Dharmaraja College - Kandy (A)</td>
+                <td class="col-data hide-mobile">43</td>
+                <td class="col-data hide-mobile">61.5</td>
+                <td class="col-data">104.5</td>
+                <td class="col-data hide-mobile">52.25</td>
+            </tr>
+            <tr>
+                <td class="col-rank">7</td>
+                <td>Ruwanwella Rajasinghe Central College (B)</td>
+                <td class="col-data hide-mobile">49.5</td>
+                <td class="col-data hide-mobile">52.5</td>
+                <td class="col-data">102</td>
+                <td class="col-data hide-mobile">51</td>
+            </tr>
+            <tr>
+                <td class="col-rank">8</td>
+                <td>Rahula College Matara (A)</td>
+                <td class="col-data hide-mobile">59</td>
+                <td class="col-data hide-mobile">35.25</td>
+                <td class="col-data">94.25</td>
+                <td class="col-data hide-mobile">47.125</td>
+            </tr>
+            <tr>
+                <td class="col-rank">9</td>
+                <td>Mahanama Central College Monaragala (A)</td>
+                <td class="col-data hide-mobile">45.5</td>
+                <td class="col-data hide-mobile">47.75</td>
+                <td class="col-data">93.25</td>
+                <td class="col-data hide-mobile">46.625</td>
+            </tr>
+            <tr>
+                <td class="col-rank">10</td>
+                <td>Sanghamiththa Balika Vidyalaya, Galle (A)</td>
+                <td class="col-data hide-mobile">64.5</td>
+                <td class="col-data hide-mobile">28.25</td>
+                <td class="col-data">92.75</td>
+                <td class="col-data hide-mobile">46.375</td>
+            </tr>
+            <tr>
+                <td class="col-rank">11</td>
+                <td>Royal College Colombo 07 (B)</td>
+                <td class="col-data hide-mobile">61</td>
+                <td class="col-data hide-mobile">31.25</td>
+                <td class="col-data">92.25</td>
+                <td class="col-data hide-mobile">46.125</td>
+            </tr>
+            <tr>
+                <td class="col-rank">12</td>
+                <td>Piliyandala Central College (B)</td>
+                <td class="col-data hide-mobile">53</td>
+                <td class="col-data hide-mobile">33.75</td>
+                <td class="col-data">86.75</td>
+                <td class="col-data hide-mobile">43.375</td>
+            </tr>
+            <tr>
+                <td class="col-rank">13</td>
+                <td>De Mazenod College, Kandana (A)</td>
+                <td class="col-data hide-mobile">52.5</td>
+                <td class="col-data hide-mobile">31.5</td>
+                <td class="col-data">84</td>
+                <td class="col-data hide-mobile">42</td>
+            </tr>
+            <tr>
+                <td class="col-rank">14</td>
+                <td>Defence Services College, Colombo - 02 (A)</td>
+                <td class="col-data hide-mobile">59</td>
+                <td class="col-data hide-mobile">23</td>
+                <td class="col-data">82</td>
+                <td class="col-data hide-mobile">41</td>
+            </tr>
+            <tr>
+                <td class="col-rank">15</td>
+                <td>Maliyadeva College (A)</td>
+                <td class="col-data hide-mobile">60.5</td>
+                <td class="col-data hide-mobile">20</td>
+                <td class="col-data">80.5</td>
+                <td class="col-data hide-mobile">40.25</td>
+            </tr>
+            <tr>
+                <td class="col-rank">16</td>
+                <td>Musaeus College (A)</td>
+                <td class="col-data hide-mobile">50</td>
+                <td class="col-data hide-mobile">23.75</td>
+                <td class="col-data">73.75</td>
+                <td class="col-data hide-mobile">36.875</td>
+            </tr>
+            <tr>
+                <td class="col-rank">17</td>
+                <td>Swarnamali Girls' College, Kandy (A)</td>
+                <td class="col-data hide-mobile">54</td>
+                <td class="col-data hide-mobile">18.75</td>
+                <td class="col-data">72.75</td>
+                <td class="col-data hide-mobile">36.375</td>
+            </tr>
+            <tr>
+                <td class="col-rank">18</td>
+                <td>St.Joseph's College, Colombo 10 (A)</td>
+                <td class="col-data hide-mobile">48</td>
+                <td class="col-data hide-mobile">18.75</td>
+                <td class="col-data">66.75</td>
+                <td class="col-data hide-mobile">33.375</td>
+            </tr>
+            <tr>
+                <td class="col-rank">19</td>
+                <td>R/Balangoda Ananda Mithreya Central College (A)</td>
+                <td class="col-data hide-mobile">53.5</td>
+                <td class="col-data hide-mobile">11.5</td>
+                <td class="col-data">65</td>
+                <td class="col-data hide-mobile">32.5</td>
+            </tr>
+            <tr>
+                <td class="col-rank">20</td>
+                <td>Taxila Central College (A)</td>
+                <td class="col-data hide-mobile">52</td>
+                <td class="col-data hide-mobile">9.25</td>
+                <td class="col-data">61.25</td>
+                <td class="col-data hide-mobile">30.625</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
   <h2>Final Round</h2>
 
   <p>The Sky Observatory Competition will be held under 6 factions:</p>
